@@ -55,8 +55,8 @@ data:
     [OUTPUT]
         Name        azure
         Match       *
-        Customer_ID af04ef93-de27-4a11-82b2-f6f8db52e8c0
-        Shared_Key  rjmZBbPrgeo23pWoGN3yDmxcKtgFDEeeza+/MGOj/Qiv2aPX56J9Y1jkY1UrtjiNsO5WfJ8ljzC0sBfwLYU/6w==
+        Customer_ID ${af04ef93-de27-4a11-82b2-f6f8db52e8c0}
+        Shared_Key  ${rjmZBbPrgeo23pWoGN3yDmxcKtgFDEeeza+/MGOj/Qiv2aPX56J9Y1jkY1UrtjiNsO5WfJ8ljzC0sBfwLYU/6w==}
 
   output-forward.conf: |
     [OUTPUT]
