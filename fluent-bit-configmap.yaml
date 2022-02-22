@@ -20,7 +20,7 @@ data:
 
     @INCLUDE input-kubernetes.conf
     @INCLUDE filter-kubernetes.conf
-    @INCLUDE output-forward.conf
+    @INCLUDE output-azure.conf
 
   input-kubernetes.conf: |
     [INPUT]
