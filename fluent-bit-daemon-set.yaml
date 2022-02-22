@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
   name: fluent-bit
@@ -8,9 +8,6 @@ metadata:
     version: v1
     kubernetes.io/cluster-service: "true"
 spec:
-  selector:
-    matchLabels:
-      k8s-app: fluent-bit-logging
   template:
     metadata:
       labels:
@@ -24,15 +21,21 @@ spec:
     spec:
       containers:
       - name: fluent-bit
-        image: fluent/fluent-bit:1.5
+        image: fluent/fluent-bit:1.0.6
         imagePullPolicy: Always
         ports:
           - containerPort: 2020
         env:
-        - name: FLUENT_ELASTICSEARCH_HOST
-          value: "elasticsearch"
-        - name: FLUENT_ELASTICSEARCH_PORT
-          value: "9200"
+        - name: FLUENT_AZURE_WORKSPACE_ID
+          valueFrom:
+            secretKeyRef:
+              name: log-analytics-secret
+              key: WorkSpaceID
+        - name: FLUENT_AZURE_WORKSPACE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: log-analytics-secret
+              key: WorkspaceKey
         volumeMounts:
         - name: varlog
           mountPath: /var/log
