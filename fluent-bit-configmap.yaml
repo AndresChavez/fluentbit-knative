@@ -95,12 +95,14 @@ data:
     [PARSER]
         Name   json
         Format json
+        Regex  ^(?<operation>[^ ]*) [^ ]* (?<resCode>[^ ]*) [^ ]* (?<payloads>[^ ]*)?$
         Time_Key time
         Time_Format %d/%b/%Y:%H:%M:%S %z
 
     [PARSER]
         Name         docker
         Format       json
+        Regex  ^(?<operation>[^ ]*) [^ ]* (?<resCode>[^ ]*) [^ ]* (?<payloads>[^ ]*)?$
         Time_Key     time
         Time_Format  %Y-%m-%dT%H:%M:%S.%L
         Time_Keep    On
