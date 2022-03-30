@@ -45,6 +45,8 @@ data:
         Merge_Log_Key       log_processed
         K8S-Logging.Parser  On
         K8S-Logging.Exclude Off
+        record host ${HOSTNAME}
+        
 
   output-null.conf: |
     [OUTPUT]
@@ -95,7 +97,6 @@ data:
     [PARSER]
         Name   json
         Format json
-        Regex  (^(?<operation>[^ ]*) [^ ]* (?<resCode>[^ ]*) [^ ]* (?<payloads>[^ ]*))?$
         Time_Key time
         Time_Format %d/%b/%Y:%H:%M:%S %z
 
