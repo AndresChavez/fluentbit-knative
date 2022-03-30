@@ -49,7 +49,7 @@ data:
     [FILTER]
         Name record_modifier
         Match *
-        record host ${HOSTNAME}
+        record operation $operation
         
   output-null.conf: |
     [OUTPUT]
