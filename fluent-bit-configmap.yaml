@@ -100,15 +100,12 @@ data:
         Time_Format %d/%b/%Y:%H:%M:%S %z
 
     [PARSER]
-        Name         docker
-        Format       json
+        Name   docker
+        Format json
         Regex  ^(?<operation>[^ ]*) [^ ]* (?<resCode>[^ ]*) [^ ]* (?<payloads>[^ ]*)?$
         Time_Key     time
         Time_Format  %Y-%m-%dT%H:%M:%S.%L
         Time_Keep    On
-        # Command       |  Decoder  | Field | Optional Action   |
-        # ==============|===========|=======|===================|
-        Decode_Field_As    escaped     log
     
     [PARSER]
         Name        syslog
