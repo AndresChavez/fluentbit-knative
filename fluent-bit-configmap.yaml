@@ -49,7 +49,7 @@ data:
     [FILTER]
         Name record_modifier
         Match *
-        record operation $operation
+        record operation $log_s['operation']
         
   output-null.conf: |
     [OUTPUT]
