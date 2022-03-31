@@ -25,9 +25,9 @@ data:
   input-kubernetes.conf: |
     [INPUT]
         Name              tail
-        #Tag               kube.*
-        Tag               kube.<namespace_name>.<container_name>.<pod_name>.<docker_id>-
-        Tag_Regex         (?<pod_name>[a-z0-9](?:[-a-z0-9]*[a-z0-9])?(?:\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-(?<docker_id>[a-z0-9]{64})\.log$
+        Tag               kube.*
+        #Tag               kube.<namespace_name>.<container_name>.<pod_name>.<docker_id>-
+        #Tag_Regex         (?<pod_name>[a-z0-9](?:[-a-z0-9]*[a-z0-9])?(?:\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-(?<docker_id>[a-z0-9]{64})\.log$
         Path              /var/log/containers/*.log
         Parser            docker
         DB                /var/log/flb_kube.db
@@ -102,8 +102,8 @@ data:
 
     [PARSER]
         Name         docker
-        Format regex
-        Regex ^(?<time>[^ ]+) (?<stream>stdout|stderr) (?<logtag>[^ ]*) (?<log>.*)$
+        Format       regex
+        Regex        ^(?<time>[^ ]+) (?<stream>stdout|stderr) (?<logtag>[^ ]*) (?<log>.*)$
         Time_Key     time
         Time_Format  %Y-%m-%dT%H:%M:%S.%LZ
         Time_Keep    On
