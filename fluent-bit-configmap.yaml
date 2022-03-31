@@ -90,20 +90,20 @@ data:
         Format regex
         Regex  ^(?<operation>[^ ]*)(?<resCode>[^ ]*)?$
         Time_Key time
-        Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+        Time_Format %Y-%m-%dT%H:%M:%S.%LZ
 
     [PARSER]
         Name   json
         Format json
         Time_Key time
-        Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+        Time_Format %Y-%m-%dT%H:%M:%S.%LZ
 
     [PARSER]
         Name         docker
         Format       json
         Regex        ^(?<operation>[^ ]*)(?<resCode>[^ ]*)?$
         Time_Key     time
-        Time_Format  %Y-%m-%dT%H:%M:%S.%L%z
+        Time_Format  %Y-%m-%dT%H:%M:%S.%LZ
         Time_Keep    On
     
     [PARSER]
