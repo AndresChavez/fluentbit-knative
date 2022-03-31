@@ -90,20 +90,20 @@ data:
         Format regex
         Regex ^(?<remote>[^ ]*) (?<host>[^ ]*) (?<user>[^ ]*) \[(?<time>[^\]]*)\] "(?<method>\S+)(?: +(?<path>[^\"]*?)(?: +\S*)?)?" (?<code>[^ ]*) (?<size>[^ ]*)(?: "(?<referer>[^\"]*)" "(?<agent>[^\"]*)")?$
         Time_Key time
-        Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+        Time_Format %Y-%m-%dT%H:%M:%S.%L%z stdout F 
 
     [PARSER]
         Name   json
         Format json
         Time_Key time
-        Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+        Time_Format %Y-%m-%dT%H:%M:%S.%L%z stdout F 
 
     [PARSER]
         Name         docker
         Format       json
         Regex        ^(?<remote>[^ ]*) (?<host>[^ ]*) (?<user>[^ ]*) \[(?<time>[^\]]*)\] "(?<method>\S+)(?: +(?<path>[^\"]*?)(?: +\S*)?)?" (?<code>[^ ]*) (?<size>[^ ]*)(?: "(?<referer>[^\"]*)" "(?<agent>[^\"]*)")?$
         Time_Key     time
-        Time_Format  %Y-%m-%dT%H:%M:%S.%L%z
+        Time_Format  %Y-%m-%dT%H:%M:%S.%L%z stdout F 
         Time_Keep    On
     
     [PARSER]
