@@ -88,7 +88,7 @@ data:
     [PARSER]
         Name   nginx
         Format regex
-        Regex  ^(?<method>\S+)(?: +(?<path>[^\"]*?)(?: +\S*)?)?$
+        Regex  ^(?<operation>[^ ]*)(?<resCode>[^ ]*)?$
         Time_Key time
         Time_Format %Y-%m-%dT%H:%M:%S.%L%z stdout F 
 
@@ -96,14 +96,14 @@ data:
         Name   json
         Format json
         Time_Key time
-        Time_Format %Y-%m-%dT%H:%M:%S.%L%z stdout F 
+        Time_Format %Y-%m-%dT%H:%M:%S.%L%z
 
     [PARSER]
         Name         docker
         Format       json
-        Regex        ^(?<method>\S+)(?: +(?<path>[^\"]*?)(?: +\S*)?)?$
+        Regex        ^(?<operation>[^ ]*)(?<resCode>[^ ]*)?$
         Time_Key     time
-        Time_Format  %Y-%m-%dT%H:%M:%S.%L%z stdout F 
+        Time_Format  %Y-%m-%dT%H:%M:%S.%L%z
         Time_Keep    On
     
     [PARSER]
