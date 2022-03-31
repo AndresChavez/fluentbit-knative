@@ -90,7 +90,7 @@ data:
         Format regex
         Regex  ^(?<operation>[^ ]*)(?<resCode>[^ ]*)?$
         Time_Key time
-        Time_Format %Y-%m-%dT%H:%M:%S.%L%z stdout F 
+        Time_Format %Y-%m-%dT%H:%M:%S.%L%z
 
     [PARSER]
         Name   json
