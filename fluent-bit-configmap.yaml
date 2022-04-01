@@ -34,6 +34,11 @@ data:
         Mem_Buf_Limit     5MB
         Skip_Long_Lines   On
         Refresh_Interval  10
+        
+    [INPUT]
+        name            node_exporter_metrics
+        tag             node_metrics
+        scrape_interval 2
 
   filter-kubernetes.conf: |
     [FILTER]
